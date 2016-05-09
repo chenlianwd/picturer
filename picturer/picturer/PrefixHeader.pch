@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  picturer
+//
+//  Created by BaiLinfeng on 16/5/9.
+//  Copyright © 2016年 FR. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//定义整个屏幕的宽高
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define BAR_H 64
+#define GAP 15
+#define GAP_2 11
+#define STATUS_Bar_H 20
+//**颜色*/
+//#define COLOR_BG_GRAY [UIColor colorWithRed:242/255 green:242/255 blue:242/255 alpha:1]//----背景灰色
+#define COLOR_WHITE_TITLE [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:1]//----标题白色
+#define COLOR_YELLOW [UIColor colorWithRed:255/255 green:221/255.0 blue:23/255.0 alpha:1]//----黄色
+#define COLOR_BLACK_BAR [UIColor colorWithRed:26/255.0 green:26/255.0 blue:26/255.0 alpha:0.98]//----黑色导航条
+#define COLOR_BACK_BOTTOM [UIColor colorWithRed:26/255.0 green:26/255.0 blue:26/255.0 alpha:1]//----底部按钮背景黑
+#define COLOR_BLACK_TITLE [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]//----黑色标题
+#define COLOR_GRAY_SUBTITLE [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1]//----灰色副标题
+#define COLOR_GRAY_TIME [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1]//----时间灰色
+#define COLOR_GRAY_DESC [UIColor colorWithRed:178/255.0 green:178/255.0 blue:178/255.0 alpha:1]//----描述性文字灰色
+
+//**size*/
+#define ADD_ALBUM_H 60
+#endif /* PrefixHeader_pch */
