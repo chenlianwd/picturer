@@ -88,10 +88,119 @@
 {
     
 }
+/**
+ *  点击add按钮创建视图
+ *
+ */
 -(void)pullCreateAlbumTap:(UIButton *)button
 {
+    UIView * addView = [button.subviews lastObject];
+    static BOOL isOpen = NO;
+    if (isOpen == NO) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [addView setTransform:CGAffineTransformMakeRotation( (90+45) * (CGFloat)(M_PI) / 180.0)];
+            /**弹出创建相册album的视图    */
+            
+            
+        } completion:^(BOOL finished) {
+            isOpen = YES;
+        }];
+    } else {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            //相对于当前变换后的位置来变换回去。
+            addView.transform = CGAffineTransformRotate(CGAffineTransformMakeRotation((90+45) * (CGFloat)(M_PI) / 180.0), (- (90+45) * (CGFloat)(M_PI) / 180.0));
+            /**收回创建相册album的视图    */
+            
+            
+            
+            NSLog(@"nononono");
+        } completion:^(BOOL finished) {
+            isOpen = NO;
+        }];
+        
+    }
+    
+    
+
+}
+#pragma mark 编辑按钮
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [self.albumTableView setEditing:YES animated:YES];
+}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+#pragma mark 在滑动手势删除某一行的时候，显示出更多的按钮
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    // 添加一个删除按钮
+    UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        //从左滑到右的动画
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        //NSLog(@"点击了删除");
+        UIAlertController * alertVc = [UIAlertController alertControllerWithTitle:@"确定删除相册？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           // NSLog(@"删除");
+        }];
+        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            //do nothing
+            //NSLog(@"取消");
+        }];
+        [alertVc addAction:cancelAction];
+        [alertVc addAction:sureAction];
+        [self presentViewController:alertVc animated:YES completion:nil];
+        
+        // 1. 更新数据
+        //[_allDataArray removeObjectAtIndex:indexPath.row];
+        
+        // 2. 更新UI
+        
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    // 添加一个分享按钮
+    
+    UITableViewRowAction * shareRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"分享" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        //从左滑到右的动画
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        //NSLog(@"点击了分享");
+    }];
+    shareRowAction.backgroundColor = COLOR_YELLOW;
+    //shareRowAction.backgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    /*
+     //    // 添加一个置顶按钮
+     
+     UITableViewRowAction *topRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"置顶" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+     
+     NSLog(@"点击了置顶");
+     // 1. 更新数据
+     
+     //[_allDataArray exchangeObjectAtIndex:indexPath.row withObjectAtIndex:0];
+     
+     // 2. 更新UI
+     
+     NSIndexPath *firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section];
+     [tableView moveRowAtIndexPath:indexPath toIndexPath:firstIndexPath];
+     
+     }];
+     
+     topRowAction.backgroundColor = [UIColor lightGrayColor];
+     */
+    // 添加一个编辑按钮
+    UITableViewRowAction * editRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"编辑" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        //从左滑到右的动画
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        //NSLog(@"点击了编辑");
+    }];
+    editRowAction.backgroundColor = [UIColor lightGrayColor];
+    // 将设置好的按钮放到数组中返回
+    return @[deleteRowAction,shareRowAction,editRowAction];
     
 }
+
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
