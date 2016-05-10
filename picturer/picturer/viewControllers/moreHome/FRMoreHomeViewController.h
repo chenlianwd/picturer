@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class FRAlbumHomeViewController;
+
 
 @interface FRMoreHomeViewController : UIViewController
 
++(instancetype)sharedInstance;
 @end

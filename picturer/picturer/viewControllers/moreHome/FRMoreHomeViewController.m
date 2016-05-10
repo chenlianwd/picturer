@@ -7,27 +7,58 @@
 //
 
 #import "FRMoreHomeViewController.h"
-
-@interface FRMoreHomeViewController ()
+#import "FRAlbumHomeViewController.h"
+@interface FRMoreHomeViewController ()<UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
 @implementation FRMoreHomeViewController
 
++(instancetype)sharedInstance
+{
+    static FRMoreHomeViewController  * singleton = nil;
+    static dispatch_once_t once_token;
+    dispatch_once(&once_token, ^{
+        singleton = [[self alloc]init];
+    });
+    return singleton;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor blackColor];
+    self.scrollView.delegate = self;
+    self.scrollView.scrollEnabled = YES;
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT * 2);
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [UIView animateWithDuration:0.4 animations:^{
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
-        self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-        self.navigationItem.title = @"picturer";
-        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+    self.navigationItem.title = @"picturer";
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    self.navigationController.navigationBar.barTintColor = COLOR_YELLOW;
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+    self.navigationController.navigationBar.alpha = 0;
+    
+    [UIView animateWithDuration:0.6 animations:^{
+        self.navigationController.navigationBar.alpha = 1;
     }];
+    
+}
+#pragma mark -srcoll
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //NSLog(@"滑动了");
+    __weak typeof(self)weakSelf = self;
+    if (scrollView.contentOffset.y < -120) {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
     
 }
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface FRAlbumHomeViewController : UIViewController
 
+
++(instancetype)sharedInstance;
 @end

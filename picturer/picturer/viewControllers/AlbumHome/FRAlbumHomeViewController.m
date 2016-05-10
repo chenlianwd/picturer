@@ -13,9 +13,20 @@
 @interface FRAlbumHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UITableView * albumTableView;
 @property (nonatomic, strong) FRPresentingView * PresentingView;
+@property (nonatomic, strong) FRMoreHomeViewController * MoreHomeVC;
+@property (nonatomic, assign) BOOL isOuting;
 @end
 
 @implementation FRAlbumHomeViewController
++(instancetype)sharedInstance
+{
+    static FRAlbumHomeViewController  * singleton = nil;
+    static dispatch_once_t once_token;
+    dispatch_once(&once_token, ^{
+        singleton = [[self alloc]init];
+    });
+    return singleton;
+}
 -(FRPresentingView *)PresentingView
 {
     if (!_PresentingView) {
@@ -157,18 +168,20 @@
     UIView * addView = [button.subviews lastObject];
     addView.tag = 111;
     static BOOL isOpen = NO;
+    __weak typeof(self)weakSelf = self;
     if (isOpen == NO) {
         self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT - 150, SCREEN_HEIGHT, 100);
+        
         [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             
             [addView setTransform:CGAffineTransformMakeRotation( (90+45) * (CGFloat)(M_PI) / 180.0)];
             /**弹出创建相册album的动画    */
     
-            self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT - button.bounds.size.height - 150, SCREEN_WIDTH, 100);
+            weakSelf.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT - button.bounds.size.height - 150, SCREEN_WIDTH, 100);
             
             
         } completion:^(BOOL finished) {
-            self.albumTableView.userInteractionEnabled = NO;
+            weakSelf.albumTableView.userInteractionEnabled = NO;
             isOpen = YES;
         }];
     } else {
@@ -177,11 +190,11 @@
             addView.transform = CGAffineTransformRotate(CGAffineTransformMakeRotation((90+45) * (CGFloat)(M_PI) / 180.0), (- (90+45) * (CGFloat)(M_PI) / 180.0));
             /**收回创建相册album的视图    */
             
-            self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT , SCREEN_WIDTH, 100);
+            weakSelf.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT , SCREEN_WIDTH, 100);
             
             
         } completion:^(BOOL finished) {
-            self.albumTableView.userInteractionEnabled = YES;
+            weakSelf.albumTableView.userInteractionEnabled = YES;
             isOpen = NO;
         }];
         
@@ -268,6 +281,7 @@
     
 }
 
+
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
@@ -298,17 +312,18 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     //NSLog(@"touch");
+    __weak typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         //相对于当前变换后的位置来变换回去。
         UIView * addView = [self.view viewWithTag:111];//**用tag找到addView*/
         addView.transform = CGAffineTransformRotate(CGAffineTransformMakeRotation((90+45) * (CGFloat)(M_PI) / 180.0), (- (90+45) * (CGFloat)(M_PI) / 180.0));
         /**收回创建相册album的视图    */
         
-        self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT , SCREEN_WIDTH, 100);
+        weakSelf.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT , SCREEN_WIDTH, 100);
         
         
     } completion:^(BOOL finished) {
-        self.albumTableView.userInteractionEnabled = YES;
+        weakSelf.albumTableView.userInteractionEnabled = YES;
     }];
 
 }
@@ -316,19 +331,26 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     //NSLog(@"滑动了");
+    
+}
+//结束滑动
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    __weak typeof(self)weakSelf = self;
     if (scrollView.contentOffset.y < -120) {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.view.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, self.view.bounds.size.height);
+        _isOuting = YES;
+        [UIView animateWithDuration:0.4 animations:^{
+            weakSelf.view.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
             NSMutableArray *controllers = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
-            controllers[0] = [[FRMoreHomeViewController alloc] init];
-            [self.navigationController setViewControllers:controllers];
+            controllers[0] = [FRMoreHomeViewController sharedInstance];
+            [weakSelf.navigationController setViewControllers:controllers];
             
-            
+#warning 这块儿我看还是别用Vc之间的切换了，试试改tableview的frame和其他的透明度。
         } completion:^(BOOL finished) {
             
         }];
     }
-    
+
 }
 /*
 #pragma mark - Navigation
