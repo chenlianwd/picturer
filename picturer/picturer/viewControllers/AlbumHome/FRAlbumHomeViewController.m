@@ -7,13 +7,22 @@
 //
 
 #import "FRAlbumHomeViewController.h"
-
-@interface FRAlbumHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "FRPresentingView.h"
+#import "FRSearchViewController.h"
+#import "FRMoreHomeViewController.h"
+@interface FRAlbumHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UITableView * albumTableView;
-
+@property (nonatomic, strong) FRPresentingView * PresentingView;
 @end
 
 @implementation FRAlbumHomeViewController
+-(FRPresentingView *)PresentingView
+{
+    if (!_PresentingView) {
+        _PresentingView = [[FRPresentingView alloc]init];
+    }
+    return _PresentingView;
+}
 -(UITableView *)albumTableView
 {
     if (!_albumTableView) {
@@ -50,21 +59,31 @@
 -(void)createSubview
 {
     
-    UIImageView * searchView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    searchView.image = [UIImage imageNamed:@"search"];
-    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchButtonClick:)];
-    leftItem.customView = searchView;
+#warning mark - 图让美工改，一直弄不好。
     
-    UIImageView * cameraView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    cameraView.image = [UIImage imageNamed:@"camera"];
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(cameraButtonClick:)];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchButtonClick:)];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"camera"] style:UIBarButtonItemStylePlain target:self action:@selector(cameraButtonClick:)];
     
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.leftBarButtonItem = leftItem;
+ 
     
+      UIImageView * backGroundImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blurBg"]];
+    backGroundImg.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT);
+#warning 背景图片怎么设置?
+    //[self.albumTableView setBackgroundView:backGroundImg];
+    [self.view insertSubview:backGroundImg belowSubview:self.albumTableView];
+    
+    self.albumTableView.backgroundColor = [UIColor clearColor];
+    //self.view.backgroundColor = [UIColor clearColor];
     self.albumTableView.frame = self.view.frame;
-    //self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:self.albumTableView];
+    
+    //**创建相册的弹出视图*/
+    
+    self.PresentingView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.PresentingView];
     
     UIButton * bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
     bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - ADD_ALBUM_H - ADD_ALBUM_H, SCREEN_WIDTH, ADD_ALBUM_H);
@@ -78,16 +97,57 @@
     
     [self.view addSubview:bottomButton];
     
+    
 }
 #pragma mark - action
 -(void)searchButtonClick:(UIBarButtonItem *)_b
 {
+    FRSearchViewController * searchVc = [FRSearchViewController sharedInstance];
+    searchVc.view.frame = self.view.bounds;
+    [self addChildViewController:searchVc];
+    [self.view addSubview:searchVc.view];
+    //NSLog(@"aaa");
     
 }
+//调用相机
 -(void)cameraButtonClick:(UIBarButtonItem *)_b
 {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController * picker = [[UIImagePickerController alloc]init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;  //是否可编辑
+        //摄像头
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:picker animated:YES completion:nil];
+        
+    }else{
+        //如果没有提示用户
+        
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"提示" message:@"未发现摄像头" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [alertVc addAction:action];
+        [self presentViewController:alertVc animated:YES completion:nil];
+    }
+    
     
 }
+//拍摄完成后要执行的方法
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //得到图片
+    UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //图片存入系统相册
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    //**保存到自己的相册*/
+#warning mark----------------------------------
+    
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+}
+
 /**
  *  点击add按钮创建视图
  *
@@ -95,14 +155,20 @@
 -(void)pullCreateAlbumTap:(UIButton *)button
 {
     UIView * addView = [button.subviews lastObject];
+    addView.tag = 111;
     static BOOL isOpen = NO;
     if (isOpen == NO) {
+        self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT - 150, SCREEN_HEIGHT, 100);
         [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            
             [addView setTransform:CGAffineTransformMakeRotation( (90+45) * (CGFloat)(M_PI) / 180.0)];
-            /**弹出创建相册album的视图    */
+            /**弹出创建相册album的动画    */
+    
+            self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT - button.bounds.size.height - 150, SCREEN_WIDTH, 100);
             
             
         } completion:^(BOOL finished) {
+            self.albumTableView.userInteractionEnabled = NO;
             isOpen = YES;
         }];
     } else {
@@ -111,10 +177,11 @@
             addView.transform = CGAffineTransformRotate(CGAffineTransformMakeRotation((90+45) * (CGFloat)(M_PI) / 180.0), (- (90+45) * (CGFloat)(M_PI) / 180.0));
             /**收回创建相册album的视图    */
             
+            self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT , SCREEN_WIDTH, 100);
             
             
-            NSLog(@"nononono");
         } completion:^(BOOL finished) {
+            self.albumTableView.userInteractionEnabled = YES;
             isOpen = NO;
         }];
         
@@ -133,7 +200,7 @@
 {
     return YES;
 }
-#pragma mark 在滑动手势删除某一行的时候，显示出更多的按钮
+#pragma mark 在滑动某一行的时候，显示出更多的按钮
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
@@ -204,7 +271,7 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 100;
+    return 90;
 }
 #pragma mark - UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -219,6 +286,7 @@
 {
     static NSString * cellID = @"AlbumCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+
     return cell;
 }
 - (void)didReceiveMemoryWarning {
@@ -226,6 +294,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - touch superView
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    //NSLog(@"touch");
+    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        //相对于当前变换后的位置来变换回去。
+        UIView * addView = [self.view viewWithTag:111];//**用tag找到addView*/
+        addView.transform = CGAffineTransformRotate(CGAffineTransformMakeRotation((90+45) * (CGFloat)(M_PI) / 180.0), (- (90+45) * (CGFloat)(M_PI) / 180.0));
+        /**收回创建相册album的视图    */
+        
+        self.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT , SCREEN_WIDTH, 100);
+        
+        
+    } completion:^(BOOL finished) {
+        self.albumTableView.userInteractionEnabled = YES;
+    }];
+
+}
+#pragma mark -srcoll
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //NSLog(@"滑动了");
+    if (scrollView.contentOffset.y < -120) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.view.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, self.view.bounds.size.height);
+            NSMutableArray *controllers = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
+            controllers[0] = [[FRMoreHomeViewController alloc] init];
+            [self.navigationController setViewControllers:controllers];
+            
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+    
+}
 /*
 #pragma mark - Navigation
 

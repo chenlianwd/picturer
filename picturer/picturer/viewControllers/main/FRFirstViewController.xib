@@ -23,7 +23,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <state key="normal" title="登录">
-                        <color key="titleColor" red="0.99313421989999995" green="1" blue="0.034647209339999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="1" green="0.82897827530000001" blue="0.1156679586" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="loginTap:" destination="-1" eventType="touchUpInside" id="Uga-hn-GOn"/>
@@ -38,14 +38,14 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <state key="normal" title="注册">
-                        <color key="titleColor" red="0.99313421989999995" green="1" blue="0.034647209339999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="1" green="0.82897827530000001" blue="0.1156679586" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="registerTap:" destination="-1" eventType="touchUpInside" id="e8g-dr-bi1"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.99313421990721173" green="1" blue="0.034647209341451268" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="0.82897827530000001" blue="0.1156679586" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="5Px-1J-Wia" firstAttribute="top" secondItem="0tA-Lo-UEq" secondAttribute="bottom" constant="8" id="Gv6-N0-uKC"/>
                 <constraint firstItem="0tA-Lo-UEq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MXu-eq-xsr"/>

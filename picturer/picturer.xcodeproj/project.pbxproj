@@ -102,6 +102,7 @@
 		921AD9041CE0678E0004F2C1 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AD9031CE0678E0004F2C1 /* UINavigationBar+Awesome.m */; };
 		921AD9081CE07C490004F2C1 /* FRAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AD9071CE07C490004F2C1 /* FRAlbumCell.m */; };
 		921AD90A1CE07C950004F2C1 /* FRAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921AD9091CE07C950004F2C1 /* FRAlbumCell.xib */; };
+		925A60081CE17EE500F0FF57 /* FRPresentingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A60071CE17EE500F0FF57 /* FRPresentingView.m */; };
 		92724C6B1CE025490058ADB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92724C6A1CE025490058ADB0 /* main.m */; };
 		92724C6E1CE025490058ADB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92724C6D1CE025490058ADB0 /* AppDelegate.m */; };
 		92724C741CE025490058ADB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92724C721CE025490058ADB0 /* Main.storyboard */; };
@@ -126,6 +127,10 @@
 		92724D851CE02F540058ADB0 /* FRFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92724D831CE02F540058ADB0 /* FRFirstViewController.xib */; };
 		92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92724D881CE02FBD0058ADB0 /* FRAlbumHomeViewController.m */; };
 		92724D8B1CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92724D891CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib */; };
+		92B2737A1CE1B54800D02D90 /* FRSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B273781CE1B54800D02D90 /* FRSearchViewController.m */; };
+		92B2737B1CE1B54800D02D90 /* FRSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B273791CE1B54800D02D90 /* FRSearchViewController.xib */; };
+		92B2737F1CE1E81700D02D90 /* FRMoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B2737D1CE1E81700D02D90 /* FRMoreHomeViewController.m */; };
+		92B273801CE1E81700D02D90 /* FRMoreHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B2737E1CE1E81700D02D90 /* FRMoreHomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +248,8 @@
 		921AD9061CE07C490004F2C1 /* FRAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAlbumCell.h; sourceTree = "<group>"; };
 		921AD9071CE07C490004F2C1 /* FRAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAlbumCell.m; sourceTree = "<group>"; };
 		921AD9091CE07C950004F2C1 /* FRAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRAlbumCell.xib; sourceTree = "<group>"; };
+		925A60061CE17EE500F0FF57 /* FRPresentingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPresentingView.h; sourceTree = "<group>"; };
+		925A60071CE17EE500F0FF57 /* FRPresentingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPresentingView.m; sourceTree = "<group>"; };
 		92724C661CE025490058ADB0 /* picturer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = picturer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92724C6A1CE025490058ADB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92724C6C1CE025490058ADB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -280,6 +287,12 @@
 		92724D871CE02FBD0058ADB0 /* FRAlbumHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAlbumHomeViewController.h; sourceTree = "<group>"; };
 		92724D881CE02FBD0058ADB0 /* FRAlbumHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAlbumHomeViewController.m; sourceTree = "<group>"; };
 		92724D891CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRAlbumHomeViewController.xib; sourceTree = "<group>"; };
+		92B273771CE1B54800D02D90 /* FRSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSearchViewController.h; sourceTree = "<group>"; };
+		92B273781CE1B54800D02D90 /* FRSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSearchViewController.m; sourceTree = "<group>"; };
+		92B273791CE1B54800D02D90 /* FRSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRSearchViewController.xib; sourceTree = "<group>"; };
+		92B2737C1CE1E81700D02D90 /* FRMoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMoreHomeViewController.h; sourceTree = "<group>"; };
+		92B2737D1CE1E81700D02D90 /* FRMoreHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMoreHomeViewController.m; sourceTree = "<group>"; };
+		92B2737E1CE1E81700D02D90 /* FRMoreHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRMoreHomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,8 +456,20 @@
 				921AD9061CE07C490004F2C1 /* FRAlbumCell.h */,
 				921AD9071CE07C490004F2C1 /* FRAlbumCell.m */,
 				921AD9091CE07C950004F2C1 /* FRAlbumCell.xib */,
+				925A60061CE17EE500F0FF57 /* FRPresentingView.h */,
+				925A60071CE17EE500F0FF57 /* FRPresentingView.m */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		925A60001CE16A5C00F0FF57 /* moreHome */ = {
+			isa = PBXGroup;
+			children = (
+				92B2737C1CE1E81700D02D90 /* FRMoreHomeViewController.h */,
+				92B2737D1CE1E81700D02D90 /* FRMoreHomeViewController.m */,
+				92B2737E1CE1E81700D02D90 /* FRMoreHomeViewController.xib */,
+			);
+			path = moreHome;
 			sourceTree = "<group>";
 		};
 		92724C5D1CE025490058ADB0 = {
@@ -540,6 +565,8 @@
 		92724D6B1CE02E090058ADB0 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				92B273761CE1B4E800D02D90 /* search */,
+				925A60001CE16A5C00F0FF57 /* moreHome */,
 				92724D6D1CE02E090058ADB0 /* main */,
 				92724D6E1CE02E090058ADB0 /* register */,
 				92724D6C1CE02E090058ADB0 /* login */,
@@ -588,6 +615,16 @@
 				92724D891CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib */,
 			);
 			path = AlbumHome;
+			sourceTree = "<group>";
+		};
+		92B273761CE1B4E800D02D90 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				92B273771CE1B54800D02D90 /* FRSearchViewController.h */,
+				92B273781CE1B54800D02D90 /* FRSearchViewController.m */,
+				92B273791CE1B54800D02D90 /* FRSearchViewController.xib */,
+			);
+			path = search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -716,6 +753,7 @@
 				921AD8C91CE0425C0004F2C1 /* icon_close.png in Resources */,
 				921AD8DA1CE0425C0004F2C1 /* newAlbum.png in Resources */,
 				921AD8AC1CE0425C0004F2C1 /* add02.png in Resources */,
+				92B273801CE1E81700D02D90 /* FRMoreHomeViewController.xib in Resources */,
 				921AD8EE1CE0425C0004F2C1 /* search_icon.png in Resources */,
 				921AD8A71CE0425C0004F2C1 /* ad_2.jpg in Resources */,
 				921AD8B01CE0425C0004F2C1 /* back_icon.png in Resources */,
@@ -747,6 +785,7 @@
 				921AD8C51CE0425C0004F2C1 /* icon_6.png in Resources */,
 				921AD8A61CE0425C0004F2C1 /* ad_1.jpg in Resources */,
 				921AD8C21CE0425C0004F2C1 /* icon_3.png in Resources */,
+				92B2737B1CE1B54800D02D90 /* FRSearchViewController.xib in Resources */,
 				921AD8E71CE0425C0004F2C1 /* photo_icon.png in Resources */,
 				921AD8DE1CE0425C0004F2C1 /* pic_1.JPG in Resources */,
 				921AD8F61CE0425C0004F2C1 /* logo_white.png in Resources */,
@@ -818,12 +857,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B2737A1CE1B54800D02D90 /* FRSearchViewController.m in Sources */,
 				921AD9081CE07C490004F2C1 /* FRAlbumCell.m in Sources */,
 				92724D7F1CE02F320058ADB0 /* FRRegisterViewController.m in Sources */,
 				92724D841CE02F540058ADB0 /* FRFirstViewController.m in Sources */,
 				92724C6E1CE025490058ADB0 /* AppDelegate.m in Sources */,
 				921AD9041CE0678E0004F2C1 /* UINavigationBar+Awesome.m in Sources */,
 				92724D711CE02E4D0058ADB0 /* FRNavViewController.m in Sources */,
+				925A60081CE17EE500F0FF57 /* FRPresentingView.m in Sources */,
+				92B2737F1CE1E81700D02D90 /* FRMoreHomeViewController.m in Sources */,
 				92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */,
 				92724D7A1CE02F170058ADB0 /* FRLoginViewController.m in Sources */,
 				92724C6B1CE025490058ADB0 /* main.m in Sources */,
