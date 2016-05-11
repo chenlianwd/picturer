@@ -9,6 +9,8 @@
 #import "FRRegisterViewController.h"
 
 @interface FRRegisterViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *phoneNum;
+@property (weak, nonatomic) IBOutlet UIButton *yanZhengBtn;
 
 @end
 
@@ -33,6 +35,10 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationItem.title = @"注册";
+}
+- (IBAction)yanzhengBtnHandler:(UIButton *)sender {
+}
+- (IBAction)infoHandler:(UIButton *)sender {
 }
 
 - (void)didReceiveMemoryWarning {

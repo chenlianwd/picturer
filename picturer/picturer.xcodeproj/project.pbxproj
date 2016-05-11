@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92074BBF1CE2DD520084D40D /* FRCreateAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074BBD1CE2DD520084D40D /* FRCreateAlbumViewController.m */; };
+		92074BC01CE2DD520084D40D /* FRCreateAlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92074BBE1CE2DD520084D40D /* FRCreateAlbumViewController.xib */; };
+		92074C141CE310580084D40D /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C021CE310580084D40D /* TZAssetCell.m */; };
+		92074C151CE310580084D40D /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C041CE310580084D40D /* TZAssetModel.m */; };
+		92074C161CE310580084D40D /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C061CE310580084D40D /* TZImageManager.m */; };
+		92074C171CE310580084D40D /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92074C071CE310580084D40D /* TZImagePickerController.bundle */; };
+		92074C181CE310580084D40D /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C091CE310580084D40D /* TZImagePickerController.m */; };
+		92074C191CE310580084D40D /* TZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C0B1CE310580084D40D /* TZPhotoPickerController.m */; };
+		92074C1A1CE310580084D40D /* TZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C0D1CE310580084D40D /* TZPhotoPreviewCell.m */; };
+		92074C1B1CE310580084D40D /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C0F1CE310580084D40D /* TZPhotoPreviewController.m */; };
+		92074C1C1CE310580084D40D /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C111CE310580084D40D /* TZVideoPlayerController.m */; };
+		92074C1D1CE310580084D40D /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C131CE310580084D40D /* UIView+Layout.m */; };
+		92074C211CE312690084D40D /* FRAddImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C201CE312690084D40D /* FRAddImgViewController.m */; };
+		92074C2A1CE334900084D40D /* FRSocialHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C281CE334900084D40D /* FRSocialHomeViewController.m */; };
+		92074C2B1CE334900084D40D /* FRSocialHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92074C291CE334900084D40D /* FRSocialHomeViewController.xib */; };
 		921AD8A61CE0425C0004F2C1 /* ad_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 921AD8481CE0425C0004F2C1 /* ad_1.jpg */; };
 		921AD8A71CE0425C0004F2C1 /* ad_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 921AD8491CE0425C0004F2C1 /* ad_2.jpg */; };
 		921AD8A81CE0425C0004F2C1 /* ad_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 921AD84A1CE0425C0004F2C1 /* ad_3.jpg */; };
@@ -126,11 +141,8 @@
 		92724D841CE02F540058ADB0 /* FRFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92724D821CE02F540058ADB0 /* FRFirstViewController.m */; };
 		92724D851CE02F540058ADB0 /* FRFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92724D831CE02F540058ADB0 /* FRFirstViewController.xib */; };
 		92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92724D881CE02FBD0058ADB0 /* FRAlbumHomeViewController.m */; };
-		92724D8B1CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92724D891CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib */; };
 		92B2737A1CE1B54800D02D90 /* FRSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B273781CE1B54800D02D90 /* FRSearchViewController.m */; };
 		92B2737B1CE1B54800D02D90 /* FRSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B273791CE1B54800D02D90 /* FRSearchViewController.xib */; };
-		92B2737F1CE1E81700D02D90 /* FRMoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B2737D1CE1E81700D02D90 /* FRMoreHomeViewController.m */; };
-		92B273801CE1E81700D02D90 /* FRMoreHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B2737E1CE1E81700D02D90 /* FRMoreHomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +163,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92074BBC1CE2DD520084D40D /* FRCreateAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCreateAlbumViewController.h; sourceTree = "<group>"; };
+		92074BBD1CE2DD520084D40D /* FRCreateAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCreateAlbumViewController.m; sourceTree = "<group>"; };
+		92074BBE1CE2DD520084D40D /* FRCreateAlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRCreateAlbumViewController.xib; sourceTree = "<group>"; };
+		92074C011CE310580084D40D /* TZAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetCell.h; sourceTree = "<group>"; };
+		92074C021CE310580084D40D /* TZAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetCell.m; sourceTree = "<group>"; };
+		92074C031CE310580084D40D /* TZAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetModel.h; sourceTree = "<group>"; };
+		92074C041CE310580084D40D /* TZAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetModel.m; sourceTree = "<group>"; };
+		92074C051CE310580084D40D /* TZImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageManager.h; sourceTree = "<group>"; };
+		92074C061CE310580084D40D /* TZImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageManager.m; sourceTree = "<group>"; };
+		92074C071CE310580084D40D /* TZImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TZImagePickerController.bundle; sourceTree = "<group>"; };
+		92074C081CE310580084D40D /* TZImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImagePickerController.h; sourceTree = "<group>"; };
+		92074C091CE310580084D40D /* TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImagePickerController.m; sourceTree = "<group>"; };
+		92074C0A1CE310580084D40D /* TZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPickerController.h; sourceTree = "<group>"; };
+		92074C0B1CE310580084D40D /* TZPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPickerController.m; sourceTree = "<group>"; };
+		92074C0C1CE310580084D40D /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
+		92074C0D1CE310580084D40D /* TZPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewCell.m; sourceTree = "<group>"; };
+		92074C0E1CE310580084D40D /* TZPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewController.h; sourceTree = "<group>"; };
+		92074C0F1CE310580084D40D /* TZPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewController.m; sourceTree = "<group>"; };
+		92074C101CE310580084D40D /* TZVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZVideoPlayerController.h; sourceTree = "<group>"; };
+		92074C111CE310580084D40D /* TZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZVideoPlayerController.m; sourceTree = "<group>"; };
+		92074C121CE310580084D40D /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		92074C131CE310580084D40D /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		92074C1F1CE312690084D40D /* FRAddImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAddImgViewController.h; sourceTree = "<group>"; };
+		92074C201CE312690084D40D /* FRAddImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAddImgViewController.m; sourceTree = "<group>"; };
+		92074C271CE334900084D40D /* FRSocialHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRSocialHomeViewController.h; path = picturer/viewControllers/addImg/FRSocialHomeViewController.h; sourceTree = SOURCE_ROOT; };
+		92074C281CE334900084D40D /* FRSocialHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSocialHomeViewController.m; path = picturer/viewControllers/addImg/FRSocialHomeViewController.m; sourceTree = SOURCE_ROOT; };
+		92074C291CE334900084D40D /* FRSocialHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FRSocialHomeViewController.xib; path = picturer/viewControllers/addImg/FRSocialHomeViewController.xib; sourceTree = SOURCE_ROOT; };
 		921AD8481CE0425C0004F2C1 /* ad_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad_1.jpg; sourceTree = "<group>"; };
 		921AD8491CE0425C0004F2C1 /* ad_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad_2.jpg; sourceTree = "<group>"; };
 		921AD84A1CE0425C0004F2C1 /* ad_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad_3.jpg; sourceTree = "<group>"; };
@@ -286,13 +325,9 @@
 		92724D831CE02F540058ADB0 /* FRFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRFirstViewController.xib; sourceTree = "<group>"; };
 		92724D871CE02FBD0058ADB0 /* FRAlbumHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAlbumHomeViewController.h; sourceTree = "<group>"; };
 		92724D881CE02FBD0058ADB0 /* FRAlbumHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAlbumHomeViewController.m; sourceTree = "<group>"; };
-		92724D891CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRAlbumHomeViewController.xib; sourceTree = "<group>"; };
 		92B273771CE1B54800D02D90 /* FRSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSearchViewController.h; sourceTree = "<group>"; };
 		92B273781CE1B54800D02D90 /* FRSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSearchViewController.m; sourceTree = "<group>"; };
 		92B273791CE1B54800D02D90 /* FRSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRSearchViewController.xib; sourceTree = "<group>"; };
-		92B2737C1CE1E81700D02D90 /* FRMoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMoreHomeViewController.h; sourceTree = "<group>"; };
-		92B2737D1CE1E81700D02D90 /* FRMoreHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMoreHomeViewController.m; sourceTree = "<group>"; };
-		92B2737E1CE1E81700D02D90 /* FRMoreHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRMoreHomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +362,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92074BBB1CE2DD2C0084D40D /* CreateAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				92074BBC1CE2DD520084D40D /* FRCreateAlbumViewController.h */,
+				92074BBD1CE2DD520084D40D /* FRCreateAlbumViewController.m */,
+				92074BBE1CE2DD520084D40D /* FRCreateAlbumViewController.xib */,
+			);
+			path = CreateAlbum;
+			sourceTree = "<group>";
+		};
+		92074BC11CE30FC80084D40D /* third party */ = {
+			isa = PBXGroup;
+			children = (
+				92074C001CE310580084D40D /* TZImagePickerController */,
+			);
+			path = "third party";
+			sourceTree = "<group>";
+		};
+		92074C001CE310580084D40D /* TZImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				92074C011CE310580084D40D /* TZAssetCell.h */,
+				92074C021CE310580084D40D /* TZAssetCell.m */,
+				92074C031CE310580084D40D /* TZAssetModel.h */,
+				92074C041CE310580084D40D /* TZAssetModel.m */,
+				92074C051CE310580084D40D /* TZImageManager.h */,
+				92074C061CE310580084D40D /* TZImageManager.m */,
+				92074C071CE310580084D40D /* TZImagePickerController.bundle */,
+				92074C081CE310580084D40D /* TZImagePickerController.h */,
+				92074C091CE310580084D40D /* TZImagePickerController.m */,
+				92074C0A1CE310580084D40D /* TZPhotoPickerController.h */,
+				92074C0B1CE310580084D40D /* TZPhotoPickerController.m */,
+				92074C0C1CE310580084D40D /* TZPhotoPreviewCell.h */,
+				92074C0D1CE310580084D40D /* TZPhotoPreviewCell.m */,
+				92074C0E1CE310580084D40D /* TZPhotoPreviewController.h */,
+				92074C0F1CE310580084D40D /* TZPhotoPreviewController.m */,
+				92074C101CE310580084D40D /* TZVideoPlayerController.h */,
+				92074C111CE310580084D40D /* TZVideoPlayerController.m */,
+				92074C121CE310580084D40D /* UIView+Layout.h */,
+				92074C131CE310580084D40D /* UIView+Layout.m */,
+			);
+			path = TZImagePickerController;
+			sourceTree = "<group>";
+		};
+		92074C1E1CE312500084D40D /* addImg */ = {
+			isa = PBXGroup;
+			children = (
+				92074C1F1CE312690084D40D /* FRAddImgViewController.h */,
+				92074C201CE312690084D40D /* FRAddImgViewController.m */,
+			);
+			path = addImg;
+			sourceTree = "<group>";
+		};
 		921AD8461CE0425C0004F2C1 /* pics */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,13 +550,14 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		925A60001CE16A5C00F0FF57 /* moreHome */ = {
+		925A60001CE16A5C00F0FF57 /* socialHome */ = {
 			isa = PBXGroup;
 			children = (
-				92B2737C1CE1E81700D02D90 /* FRMoreHomeViewController.h */,
-				92B2737D1CE1E81700D02D90 /* FRMoreHomeViewController.m */,
-				92B2737E1CE1E81700D02D90 /* FRMoreHomeViewController.xib */,
+				92074C271CE334900084D40D /* FRSocialHomeViewController.h */,
+				92074C281CE334900084D40D /* FRSocialHomeViewController.m */,
+				92074C291CE334900084D40D /* FRSocialHomeViewController.xib */,
 			);
+			name = socialHome;
 			path = moreHome;
 			sourceTree = "<group>";
 		};
@@ -495,6 +584,7 @@
 		92724C681CE025490058ADB0 /* picturer */ = {
 			isa = PBXGroup;
 			children = (
+				92074BC11CE30FC80084D40D /* third party */,
 				921AD9051CE07BE90004F2C1 /* views */,
 				92724D6B1CE02E090058ADB0 /* viewControllers */,
 				92724D581CE026610058ADB0 /* libs */,
@@ -565,8 +655,10 @@
 		92724D6B1CE02E090058ADB0 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				92074C1E1CE312500084D40D /* addImg */,
+				92074BBB1CE2DD2C0084D40D /* CreateAlbum */,
 				92B273761CE1B4E800D02D90 /* search */,
-				925A60001CE16A5C00F0FF57 /* moreHome */,
+				925A60001CE16A5C00F0FF57 /* socialHome */,
 				92724D6D1CE02E090058ADB0 /* main */,
 				92724D6E1CE02E090058ADB0 /* register */,
 				92724D6C1CE02E090058ADB0 /* login */,
@@ -612,7 +704,6 @@
 			children = (
 				92724D871CE02FBD0058ADB0 /* FRAlbumHomeViewController.h */,
 				92724D881CE02FBD0058ADB0 /* FRAlbumHomeViewController.m */,
-				92724D891CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib */,
 			);
 			path = AlbumHome;
 			sourceTree = "<group>";
@@ -732,6 +823,7 @@
 			files = (
 				921AD8FF1CE0425C0004F2C1 /* user_7.jpg in Resources */,
 				921AD8FB1CE0425C0004F2C1 /* user_3.jpg in Resources */,
+				92074C2B1CE334900084D40D /* FRSocialHomeViewController.xib in Resources */,
 				921AD8F71CE0425C0004F2C1 /* user_1.jpg in Resources */,
 				921AD8EF1CE0425C0004F2C1 /* selected.png in Resources */,
 				921AD8AD1CE0425C0004F2C1 /* addIcon.png in Resources */,
@@ -753,7 +845,6 @@
 				921AD8C91CE0425C0004F2C1 /* icon_close.png in Resources */,
 				921AD8DA1CE0425C0004F2C1 /* newAlbum.png in Resources */,
 				921AD8AC1CE0425C0004F2C1 /* add02.png in Resources */,
-				92B273801CE1E81700D02D90 /* FRMoreHomeViewController.xib in Resources */,
 				921AD8EE1CE0425C0004F2C1 /* search_icon.png in Resources */,
 				921AD8A71CE0425C0004F2C1 /* ad_2.jpg in Resources */,
 				921AD8B01CE0425C0004F2C1 /* back_icon.png in Resources */,
@@ -776,6 +867,7 @@
 				921AD8E81CE0425C0004F2C1 /* pic_selected.png in Resources */,
 				921AD8C71CE0425C0004F2C1 /* icon_alert.png in Resources */,
 				92724C761CE025490058ADB0 /* Assets.xcassets in Resources */,
+				92074BC01CE2DD520084D40D /* FRCreateAlbumViewController.xib in Resources */,
 				921AD8D21CE0425C0004F2C1 /* logo_triangle.png in Resources */,
 				921AD8ED1CE0425C0004F2C1 /* search.png in Resources */,
 				921AD8FD1CE0425C0004F2C1 /* user_5.jpg in Resources */,
@@ -817,12 +909,12 @@
 				921AD8E41CE0425C0004F2C1 /* pic_7.JPG in Resources */,
 				921AD8B31CE0425C0004F2C1 /* camara.png in Resources */,
 				921AD8FA1CE0425C0004F2C1 /* user_2.jpg in Resources */,
+				92074C171CE310580084D40D /* TZImagePickerController.bundle in Resources */,
 				921AD8BE1CE0425C0004F2C1 /* edit.png in Resources */,
 				921AD8E51CE0425C0004F2C1 /* pic_8.JPG in Resources */,
 				921AD8DD1CE0425C0004F2C1 /* noPic.png in Resources */,
 				921AD8C61CE0425C0004F2C1 /* icon_7.png in Resources */,
 				921AD8F81CE0425C0004F2C1 /* user_10.jpg in Resources */,
-				92724D8B1CE02FBD0058ADB0 /* FRAlbumHomeViewController.xib in Resources */,
 				92724C741CE025490058ADB0 /* Main.storyboard in Resources */,
 				921AD8AA1CE0425C0004F2C1 /* ad_5.jpg in Resources */,
 				921AD8B61CE0425C0004F2C1 /* changeToCollect_icon.png in Resources */,
@@ -857,18 +949,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92074C1A1CE310580084D40D /* TZPhotoPreviewCell.m in Sources */,
 				92B2737A1CE1B54800D02D90 /* FRSearchViewController.m in Sources */,
+				92074C211CE312690084D40D /* FRAddImgViewController.m in Sources */,
 				921AD9081CE07C490004F2C1 /* FRAlbumCell.m in Sources */,
+				92074C1B1CE310580084D40D /* TZPhotoPreviewController.m in Sources */,
 				92724D7F1CE02F320058ADB0 /* FRRegisterViewController.m in Sources */,
 				92724D841CE02F540058ADB0 /* FRFirstViewController.m in Sources */,
 				92724C6E1CE025490058ADB0 /* AppDelegate.m in Sources */,
 				921AD9041CE0678E0004F2C1 /* UINavigationBar+Awesome.m in Sources */,
+				92074C1D1CE310580084D40D /* UIView+Layout.m in Sources */,
+				92074C1C1CE310580084D40D /* TZVideoPlayerController.m in Sources */,
+				92074BBF1CE2DD520084D40D /* FRCreateAlbumViewController.m in Sources */,
+				92074C161CE310580084D40D /* TZImageManager.m in Sources */,
 				92724D711CE02E4D0058ADB0 /* FRNavViewController.m in Sources */,
+				92074C141CE310580084D40D /* TZAssetCell.m in Sources */,
 				925A60081CE17EE500F0FF57 /* FRPresentingView.m in Sources */,
-				92B2737F1CE1E81700D02D90 /* FRMoreHomeViewController.m in Sources */,
 				92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */,
+				92074C191CE310580084D40D /* TZPhotoPickerController.m in Sources */,
 				92724D7A1CE02F170058ADB0 /* FRLoginViewController.m in Sources */,
+				92074C151CE310580084D40D /* TZAssetModel.m in Sources */,
+				92074C181CE310580084D40D /* TZImagePickerController.m in Sources */,
 				92724C6B1CE025490058ADB0 /* main.m in Sources */,
+				92074C2A1CE334900084D40D /* FRSocialHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

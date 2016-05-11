@@ -9,11 +9,14 @@
 #import "FRAlbumHomeViewController.h"
 #import "FRPresentingView.h"
 #import "FRSearchViewController.h"
-#import "FRMoreHomeViewController.h"
-@interface FRAlbumHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+#import "FRSocialHomeViewController.h"
+
+@interface FRAlbumHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong) UITableView * albumTableView;
 @property (nonatomic, strong) FRPresentingView * PresentingView;
-@property (nonatomic, strong) FRMoreHomeViewController * MoreHomeVC;
+
+@property (nonatomic, strong) UIView * contentView;
+@property (nonatomic, strong) UIScrollView * ScrollView;
 @property (nonatomic, assign) BOOL isOuting;
 @end
 
@@ -46,6 +49,8 @@
     [super viewDidLoad];
     self.albumTableView.delegate = self;
     self.albumTableView.dataSource = self;
+    self.ScrollView.delegate = self;
+    _isOuting = NO;
     [self.albumTableView registerNib:[UINib nibWithNibName:@"FRAlbumCell" bundle:nil] forCellReuseIdentifier:@"AlbumCell"];
     [self createSubview];
     
@@ -61,6 +66,10 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.navigationController.navigationBar.translucent = NO;
+//    UIImageView * headImgView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 0, 20, 20)];
+//    headImgView.image = [UIImage imageNamed:@"picturer"];
+    //self.navigationItem.titleView = headImgView;
+    
     self.navigationItem.title = @"picturer";
 
     
@@ -69,8 +78,11 @@
 #pragma mark - setup UI
 -(void)createSubview
 {
-    
-#warning mark - 图让美工改，一直弄不好。
+    _ScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    _ScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT *2);
+    _contentView = [[UIView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:_contentView];
+
     
     UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchButtonClick:)];
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"camera"] style:UIBarButtonItemStylePlain target:self action:@selector(cameraButtonClick:)];
@@ -79,22 +91,16 @@
     self.navigationItem.leftBarButtonItem = leftItem;
  
     
-      UIImageView * backGroundImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"blurBg"]];
-    backGroundImg.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT);
-#warning 背景图片怎么设置?
-    //[self.albumTableView setBackgroundView:backGroundImg];
-    [self.view insertSubview:backGroundImg belowSubview:self.albumTableView];
+
     
-    self.albumTableView.backgroundColor = [UIColor clearColor];
-    //self.view.backgroundColor = [UIColor clearColor];
     self.albumTableView.frame = self.view.frame;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.view addSubview:self.albumTableView];
+    [_contentView addSubview:self.albumTableView];
     
     //**创建相册的弹出视图*/
     
     self.PresentingView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.PresentingView];
+    [_contentView addSubview:self.PresentingView];
     
     UIButton * bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
     bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - ADD_ALBUM_H - ADD_ALBUM_H, SCREEN_WIDTH, ADD_ALBUM_H);
@@ -105,8 +111,7 @@
     
     [bottomButton addSubview:addImageView];
     [bottomButton addTarget:self action:@selector(pullCreateAlbumTap:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:bottomButton];
+    [_contentView addSubview:bottomButton];
     
     
 }
@@ -326,31 +331,59 @@
         weakSelf.albumTableView.userInteractionEnabled = YES;
     }];
 
+    
 }
 #pragma mark -srcoll
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    //NSLog(@"滑动了");
+   //NSLog(@"huahuahuahau");
     
 }
 //结束滑动
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    __weak typeof(self)weakSelf = self;
-    if (scrollView.contentOffset.y < -120) {
-        _isOuting = YES;
-        [UIView animateWithDuration:0.4 animations:^{
-            weakSelf.view.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
-            NSMutableArray *controllers = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
-            controllers[0] = [FRMoreHomeViewController sharedInstance];
-            [weakSelf.navigationController setViewControllers:controllers];
-            
-#warning 这块儿我看还是别用Vc之间的切换了，试试改tableview的frame和其他的透明度。
-        } completion:^(BOOL finished) {
-            
-        }];
+    if (scrollView == _ScrollView) {
+        NSLog(@"fafafafafafa");
     }
+    __weak typeof(self)weakSelf = self;
+    if (_isOuting == NO) {
+        
+        if (scrollView.contentOffset.y < -120) {
+            _isOuting = YES;
+            [UIView animateWithDuration:0.4 animations:^{
+    
+                //改contentView的frame
+                weakSelf.contentView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
+                //weakSelf.contentView.alpha = 0;
+                
+               
+            } completion:^(BOOL finished) {
+                
+            }];
+            
+            [self.contentView removeFromSuperview];
+            [self.view addSubview:_ScrollView];
+            _ScrollView.backgroundColor = [UIColor blueColor];
+                    }
 
+    } else if (_isOuting == YES) {
+#warning 暂时more页面用的是scroll
+        NSLog(@"aaaa");
+        if (scrollView.contentOffset.y < -120) {
+            _isOuting = NO;
+            [UIView animateWithDuration:0.4 animations:^{
+                 //weakSelf.moreHomeView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
+                //weakSelf.moreHomeView.alpha = 0;
+                _ScrollView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
+            }];
+            weakSelf.contentView.frame = weakSelf.view.bounds;
+           // weakSelf.contentView.alpha = 1;
+            
+        }
+        
+    }
+    [self.view layoutIfNeeded];
+    
 }
 /*
 #pragma mark - Navigation

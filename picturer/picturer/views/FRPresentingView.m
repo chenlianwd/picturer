@@ -7,7 +7,8 @@
 //
 
 #import "FRPresentingView.h"
-
+#import "FRCreateAlbumViewController.h"
+#import "FRAddImgViewController.h"
 @implementation FRPresentingView
 
 -(void)layoutSubviews
@@ -46,15 +47,47 @@
 
 -(void)createAlbumTap:(UIButton *)_b
 {
-    NSLog(@"button被点击了");
+    //NSLog(@"button被点击了");
+    [(UINavigationController *)[self getCurrentVC] pushViewController:[FRCreateAlbumViewController new] animated:YES];
+    //NSLog(@"%@",[self getCurrentVC]);
 }
 -(void)addPicturesTap:(UIButton *)_b
 {
-    NSLog(@"button");
+    [(UINavigationController *)[self getCurrentVC] pushViewController:[FRAddImgViewController new] animated:NO];
+
 }
 -(void)catchWebImgTap:(UIButton *)_b
 {
-    NSLog(@"button1");
+    //NSLog(@"button1");
+}
+//**获取当前显示的Vc*/
+- (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    
+    return result;
 }
 /*
 // Only override drawRect: if you perform custom drawing.
