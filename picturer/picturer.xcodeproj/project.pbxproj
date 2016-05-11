@@ -143,6 +143,8 @@
 		92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92724D881CE02FBD0058ADB0 /* FRAlbumHomeViewController.m */; };
 		92B2737A1CE1B54800D02D90 /* FRSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B273781CE1B54800D02D90 /* FRSearchViewController.m */; };
 		92B2737B1CE1B54800D02D90 /* FRSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B273791CE1B54800D02D90 /* FRSearchViewController.xib */; };
+		BA2406481CE36EF000908822 /* FRMyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2406461CE36EF000908822 /* FRMyHomeViewController.m */; };
+		BA2406491CE36EF000908822 /* FRMyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2406471CE36EF000908822 /* FRMyHomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -328,6 +330,9 @@
 		92B273771CE1B54800D02D90 /* FRSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSearchViewController.h; sourceTree = "<group>"; };
 		92B273781CE1B54800D02D90 /* FRSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSearchViewController.m; sourceTree = "<group>"; };
 		92B273791CE1B54800D02D90 /* FRSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRSearchViewController.xib; sourceTree = "<group>"; };
+		BA2406451CE36EF000908822 /* FRMyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMyHomeViewController.h; sourceTree = "<group>"; };
+		BA2406461CE36EF000908822 /* FRMyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMyHomeViewController.m; sourceTree = "<group>"; };
+		BA2406471CE36EF000908822 /* FRMyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRMyHomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -585,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				92074BC11CE30FC80084D40D /* third party */,
+				BA24063D1CE36DA700908822 /* social */,
 				921AD9051CE07BE90004F2C1 /* views */,
 				92724D6B1CE02E090058ADB0 /* viewControllers */,
 				92724D581CE026610058ADB0 /* libs */,
@@ -716,6 +722,73 @@
 				92B273791CE1B54800D02D90 /* FRSearchViewController.xib */,
 			);
 			path = search;
+			sourceTree = "<group>";
+		};
+		BA24063D1CE36DA700908822 /* social */ = {
+			isa = PBXGroup;
+			children = (
+				BA2406431CE36E2C00908822 /* myhome */,
+				BA24063E1CE36E2C00908822 /* address list */,
+				BA24063F1CE36E2C00908822 /* collection */,
+				BA2406401CE36E2C00908822 /* found */,
+				BA2406411CE36E2C00908822 /* friends */,
+				BA2406421CE36E2C00908822 /* miaoren */,
+				BA2406441CE36E2C00908822 /* setting */,
+			);
+			name = social;
+			path = viewControllers/social;
+			sourceTree = "<group>";
+		};
+		BA24063E1CE36E2C00908822 /* address list */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "address list";
+			sourceTree = "<group>";
+		};
+		BA24063F1CE36E2C00908822 /* collection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = collection;
+			sourceTree = "<group>";
+		};
+		BA2406401CE36E2C00908822 /* found */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = found;
+			sourceTree = "<group>";
+		};
+		BA2406411CE36E2C00908822 /* friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = friends;
+			sourceTree = "<group>";
+		};
+		BA2406421CE36E2C00908822 /* miaoren */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = miaoren;
+			sourceTree = "<group>";
+		};
+		BA2406431CE36E2C00908822 /* myhome */ = {
+			isa = PBXGroup;
+			children = (
+				BA2406451CE36EF000908822 /* FRMyHomeViewController.h */,
+				BA2406461CE36EF000908822 /* FRMyHomeViewController.m */,
+				BA2406471CE36EF000908822 /* FRMyHomeViewController.xib */,
+			);
+			path = myhome;
+			sourceTree = "<group>";
+		};
+		BA2406441CE36E2C00908822 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -919,6 +992,7 @@
 				921AD8AA1CE0425C0004F2C1 /* ad_5.jpg in Resources */,
 				921AD8B61CE0425C0004F2C1 /* changeToCollect_icon.png in Resources */,
 				921AD8BD1CE0425C0004F2C1 /* commentIcon.png in Resources */,
+				BA2406491CE36EF000908822 /* FRMyHomeViewController.xib in Resources */,
 				921AD8CB1CE0425C0004F2C1 /* like.png in Resources */,
 				921AD8E21CE0425C0004F2C1 /* pic_5.JPG in Resources */,
 				921AD8D41CE0425C0004F2C1 /* message_arrow.png in Resources */,
@@ -966,6 +1040,7 @@
 				92074C141CE310580084D40D /* TZAssetCell.m in Sources */,
 				925A60081CE17EE500F0FF57 /* FRPresentingView.m in Sources */,
 				92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */,
+				BA2406481CE36EF000908822 /* FRMyHomeViewController.m in Sources */,
 				92074C191CE310580084D40D /* TZPhotoPickerController.m in Sources */,
 				92724D7A1CE02F170058ADB0 /* FRLoginViewController.m in Sources */,
 				92074C151CE310580084D40D /* TZAssetModel.m in Sources */,

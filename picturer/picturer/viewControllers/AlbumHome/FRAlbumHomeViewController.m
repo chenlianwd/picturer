@@ -195,7 +195,7 @@
             addView.transform = CGAffineTransformRotate(CGAffineTransformMakeRotation((90+45) * (CGFloat)(M_PI) / 180.0), (- (90+45) * (CGFloat)(M_PI) / 180.0));
             /**收回创建相册album的视图    */
             
-            weakSelf.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT , SCREEN_WIDTH, 100);
+            weakSelf.PresentingView.frame = CGRectMake(0, SCREEN_HEIGHT - 100 , SCREEN_WIDTH, 100);
             
             
         } completion:^(BOOL finished) {
@@ -337,6 +337,7 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
    //NSLog(@"huahuahuahau");
+    //_contentView.frame = CGRectMake(0,- scrollView.contentOffset.y, SCREEN_WIDTH, SCREEN_HEIGHT);
     
 }
 //结束滑动
@@ -350,6 +351,7 @@
         
         if (scrollView.contentOffset.y < -120) {
             _isOuting = YES;
+            
             [UIView animateWithDuration:0.4 animations:^{
     
                 //改contentView的frame
@@ -358,7 +360,10 @@
                 
                
             } completion:^(BOOL finished) {
+            //这样写也能出来，但是那边怎么回来？
+                [self presentViewController:[FRSocialHomeViewController new] animated:NO completion:nil];
                 
+               
             }];
             
             [self.contentView removeFromSuperview];

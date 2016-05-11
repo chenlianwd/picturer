@@ -1,39 +1,22 @@
 //
-//  FRSocialHomeViewController.m
+//  FRMyHomeViewController.m
 //  picturer
 //
-//  Created by BaiLinfeng on 16/5/11.
+//  Created by 陈亮 on 16/5/11.
 //  Copyright © 2016年 FR. All rights reserved.
 //
 
-#import "FRSocialHomeViewController.h"
 #import "FRMyHomeViewController.h"
-@interface FRSocialHomeViewController ()
+
+@interface FRMyHomeViewController ()
 
 @end
 
-@implementation FRSocialHomeViewController
+@implementation FRMyHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-- (IBAction)myHomeHandler:(UIButton *)sender {
-    
-    [self.presentingViewController.navigationController pushViewController:[FRMyHomeViewController new] animated:YES];
-    NSLog(@"点击了");
-}
-- (IBAction)friendBtnHandler:(UIButton *)sender {
-}
-- (IBAction)miaorenBtnHandler:(UIButton *)sender {
-}
-- (IBAction)foundBtnHandler:(UIButton *)sender {
-}
-- (IBAction)collectBtnHandler:(UIButton *)sender {
-}
-- (IBAction)addressBookBtnHandler:(UIButton *)sender {
-}
-- (IBAction)settingBtnHandler:(UIButton *)sender {
 }
 
 - (void)didReceiveMemoryWarning {
