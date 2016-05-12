@@ -20,8 +20,6 @@
 		92074C1C1CE310580084D40D /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C111CE310580084D40D /* TZVideoPlayerController.m */; };
 		92074C1D1CE310580084D40D /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C131CE310580084D40D /* UIView+Layout.m */; };
 		92074C211CE312690084D40D /* FRAddImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C201CE312690084D40D /* FRAddImgViewController.m */; };
-		92074C2A1CE334900084D40D /* FRSocialHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92074C281CE334900084D40D /* FRSocialHomeViewController.m */; };
-		92074C2B1CE334900084D40D /* FRSocialHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92074C291CE334900084D40D /* FRSocialHomeViewController.xib */; };
 		921AD8A61CE0425C0004F2C1 /* ad_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 921AD8481CE0425C0004F2C1 /* ad_1.jpg */; };
 		921AD8A71CE0425C0004F2C1 /* ad_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 921AD8491CE0425C0004F2C1 /* ad_2.jpg */; };
 		921AD8A81CE0425C0004F2C1 /* ad_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 921AD84A1CE0425C0004F2C1 /* ad_3.jpg */; };
@@ -155,6 +153,8 @@
 		92FD7A811CE46F9E001230FE /* FRCommentPowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A801CE46F9E001230FE /* FRCommentPowerViewController.m */; };
 		92FD7A831CE47154001230FE /* FRCommentPowerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FD7A821CE47154001230FE /* FRCommentPowerController.xib */; };
 		92FD7A861CE47412001230FE /* FRImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A851CE47412001230FE /* FRImageModel.m */; };
+		BA0A0D351CE4B021008852EB /* FRSocialhomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A0D331CE4B021008852EB /* FRSocialhomeCollectionViewCell.m */; };
+		BA0A0D391CE4B85A008852EB /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A0D381CE4B85A008852EB /* SocialViewController.m */; };
 		BA2406481CE36EF000908822 /* FRMyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2406461CE36EF000908822 /* FRMyHomeViewController.m */; };
 		BA2406491CE36EF000908822 /* FRMyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2406471CE36EF000908822 /* FRMyHomeViewController.xib */; };
 /* End PBXBuildFile section */
@@ -201,9 +201,6 @@
 		92074C131CE310580084D40D /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		92074C1F1CE312690084D40D /* FRAddImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAddImgViewController.h; sourceTree = "<group>"; };
 		92074C201CE312690084D40D /* FRAddImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAddImgViewController.m; sourceTree = "<group>"; };
-		92074C271CE334900084D40D /* FRSocialHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRSocialHomeViewController.h; path = picturer/viewControllers/addImg/FRSocialHomeViewController.h; sourceTree = SOURCE_ROOT; };
-		92074C281CE334900084D40D /* FRSocialHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRSocialHomeViewController.m; path = picturer/viewControllers/addImg/FRSocialHomeViewController.m; sourceTree = SOURCE_ROOT; };
-		92074C291CE334900084D40D /* FRSocialHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FRSocialHomeViewController.xib; path = picturer/viewControllers/addImg/FRSocialHomeViewController.xib; sourceTree = SOURCE_ROOT; };
 		921AD8481CE0425C0004F2C1 /* ad_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad_1.jpg; sourceTree = "<group>"; };
 		921AD8491CE0425C0004F2C1 /* ad_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad_2.jpg; sourceTree = "<group>"; };
 		921AD84A1CE0425C0004F2C1 /* ad_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad_3.jpg; sourceTree = "<group>"; };
@@ -362,6 +359,10 @@
 		92FD7A821CE47154001230FE /* FRCommentPowerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRCommentPowerController.xib; sourceTree = "<group>"; };
 		92FD7A841CE47412001230FE /* FRImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRImageModel.h; sourceTree = "<group>"; };
 		92FD7A851CE47412001230FE /* FRImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRImageModel.m; sourceTree = "<group>"; };
+		BA0A0D321CE4B021008852EB /* FRSocialhomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSocialhomeCollectionViewCell.h; sourceTree = "<group>"; };
+		BA0A0D331CE4B021008852EB /* FRSocialhomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSocialhomeCollectionViewCell.m; sourceTree = "<group>"; };
+		BA0A0D371CE4B85A008852EB /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialViewController.h; path = picturer/views/SocialViewController.h; sourceTree = SOURCE_ROOT; };
+		BA0A0D381CE4B85A008852EB /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialViewController.m; path = picturer/views/SocialViewController.m; sourceTree = SOURCE_ROOT; };
 		BA2406451CE36EF000908822 /* FRMyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMyHomeViewController.h; sourceTree = "<group>"; };
 		BA2406461CE36EF000908822 /* FRMyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMyHomeViewController.m; sourceTree = "<group>"; };
 		BA2406471CE36EF000908822 /* FRMyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRMyHomeViewController.xib; sourceTree = "<group>"; };
@@ -587,6 +588,8 @@
 				921AD9091CE07C950004F2C1 /* FRAlbumCell.xib */,
 				925A60061CE17EE500F0FF57 /* FRPresentingView.h */,
 				925A60071CE17EE500F0FF57 /* FRPresentingView.m */,
+				BA0A0D321CE4B021008852EB /* FRSocialhomeCollectionViewCell.h */,
+				BA0A0D331CE4B021008852EB /* FRSocialhomeCollectionViewCell.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -594,9 +597,8 @@
 		925A60001CE16A5C00F0FF57 /* socialHome */ = {
 			isa = PBXGroup;
 			children = (
-				92074C271CE334900084D40D /* FRSocialHomeViewController.h */,
-				92074C281CE334900084D40D /* FRSocialHomeViewController.m */,
-				92074C291CE334900084D40D /* FRSocialHomeViewController.xib */,
+				BA0A0D371CE4B85A008852EB /* SocialViewController.h */,
+				BA0A0D381CE4B85A008852EB /* SocialViewController.m */,
 			);
 			name = socialHome;
 			path = moreHome;
@@ -950,6 +952,7 @@
 				TargetAttributes = {
 					92724C651CE025490058ADB0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = H4Y4W32V96;
 					};
 					92724C7E1CE025490058ADB0 = {
 						CreatedOnToolsVersion = 7.3;
@@ -988,7 +991,6 @@
 			files = (
 				921AD8FF1CE0425C0004F2C1 /* user_7.jpg in Resources */,
 				921AD8FB1CE0425C0004F2C1 /* user_3.jpg in Resources */,
-				92074C2B1CE334900084D40D /* FRSocialHomeViewController.xib in Resources */,
 				921AD8F71CE0425C0004F2C1 /* user_1.jpg in Resources */,
 				921AD8EF1CE0425C0004F2C1 /* selected.png in Resources */,
 				921AD8AD1CE0425C0004F2C1 /* addIcon.png in Resources */,
@@ -1136,6 +1138,7 @@
 				92074C161CE310580084D40D /* TZImageManager.m in Sources */,
 				92724D711CE02E4D0058ADB0 /* FRNavViewController.m in Sources */,
 				92FD7A661CE4322D001230FE /* FRTagViewController.m in Sources */,
+				BA0A0D391CE4B85A008852EB /* SocialViewController.m in Sources */,
 				92074C141CE310580084D40D /* TZAssetCell.m in Sources */,
 				925A60081CE17EE500F0FF57 /* FRPresentingView.m in Sources */,
 				92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */,
@@ -1148,9 +1151,9 @@
 				92074C181CE310580084D40D /* TZImagePickerController.m in Sources */,
 				92724C6B1CE025490058ADB0 /* main.m in Sources */,
 				92FD7A7D1CE467AD001230FE /* FRUserInfo.m in Sources */,
+				BA0A0D351CE4B021008852EB /* FRSocialhomeCollectionViewCell.m in Sources */,
 				92FD7A7A1CE466C8001230FE /* FRAlbumCellModel.m in Sources */,
 				92FD7A721CE46557001230FE /* FRPrivateViewController.m in Sources */,
-				92074C2A1CE334900084D40D /* FRSocialHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1293,6 +1296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = picturer/Info.plist;
@@ -1306,6 +1310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = picturer/Info.plist;

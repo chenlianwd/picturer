@@ -78,6 +78,12 @@
                     <constraint firstAttribute="trailingMargin" secondItem="mrg-MK-TEA" secondAttribute="trailing" constant="5" id="xxu-cr-iei"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="albumName" destination="7fa-yd-9U2" id="34E-WE-eNm"/>
+                <outlet property="imgView" destination="8GZ-xv-zUz" id="OkH-6N-l7W"/>
+                <outlet property="picsNum" destination="4Dp-M4-k5B" id="5aQ-B2-vHH"/>
+                <outlet property="timeLabel" destination="mrg-MK-TEA" id="hzW-3L-TSs"/>
+            </connections>
             <point key="canvasLocation" x="442.5" y="340"/>
         </tableViewCell>
     </objects>

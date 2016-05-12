@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FRAlbumCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *albumName;
+@property (weak, nonatomic) IBOutlet UILabel *picsNum;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end

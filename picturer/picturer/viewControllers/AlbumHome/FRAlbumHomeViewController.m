@@ -9,7 +9,9 @@
 #import "FRAlbumHomeViewController.h"
 #import "FRPresentingView.h"
 #import "FRSearchViewController.h"
-#import "FRSocialHomeViewController.h"
+#import "FRAlbumCell.h"
+
+#import "SocialViewController.h"
 
 @interface FRAlbumHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong) UITableView * albumTableView;
@@ -17,9 +19,17 @@
 @property (nonatomic ,strong)UIButton * bottomButton;
 @property (nonatomic, strong) UIView * contentView;
 @property (nonatomic, assign) BOOL isOuting;
+
 @end
 
 @implementation FRAlbumHomeViewController
+{
+    //伪造数据
+    NSArray * imgArr;
+    NSArray * nameArr;
+}
+
+
 +(instancetype)sharedInstance
 {
     static FRAlbumHomeViewController  * singleton = nil;
@@ -51,6 +61,9 @@
     _isOuting = NO;
     [self.albumTableView registerNib:[UINib nibWithNibName:@"FRAlbumCell" bundle:nil] forCellReuseIdentifier:@"AlbumCell"];
     [self createSubview];
+    //伪造的数据
+    imgArr = @[@"user_1.jpg",@"user_2.jpg",@"user_3.jpg",@"user_4.jpg",@"user_5.jpg",@"user_6.jpg",@"user_7.jpg",@"user_8.jpg",@"user_9.jpg",@"user_10.jpg",@"user_11.jpg"];
+    nameArr = @[@"album",@"朋友",@"尤克里里",@"kindle",@"收藏",@"arc",@"mrc",@"可乐",@"屋檐",@"50_cent的相册",@"奇怪"];
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -69,15 +82,20 @@
     //self.navigationItem.titleView = headImgView;
     
     self.navigationItem.title = @"picturer";
-
-    
-    
+    //恢复frame
+   self.bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - ADD_ALBUM_H - ADD_ALBUM_H, SCREEN_WIDTH, ADD_ALBUM_H);
+    NSLog(@"%g",self.view.frame.origin.y);
+   
 }
 #pragma mark - setup UI
 -(void)createSubview
 {
+    UIImageView * bgImgView = [[UIImageView alloc]initWithFrame:self.view.frame];
+    bgImgView.image = [UIImage imageNamed:@"blurBg"];
+    [self.view addSubview:bgImgView];
     
-    _contentView = [[UIView alloc]initWithFrame:self.view.bounds];
+    
+    _contentView = [[UIView alloc]initWithFrame:self.view.frame];
     _contentView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_contentView];
 
@@ -275,7 +293,7 @@
 #pragma mark - UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 11;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -284,8 +302,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString * cellID = @"AlbumCell";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-
+    FRAlbumCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.imgView.image = [UIImage imageNamed:imgArr[indexPath.row]];
+    cell.albumName.text = nameArr[indexPath.row];
     return cell;
 }
 - (void)didReceiveMemoryWarning {
@@ -338,29 +357,30 @@
                 weakSelf.bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
 
                 //weakSelf.contentView.alpha = 0;
+                //[self presentViewController:[FRSocialHomeViewController new] animated:NO completion:nil];
+                //[self.navigationController pushViewController:[FRSocialHomeViewController new] animated:NO];
                 
-               
+                [self.navigationController pushViewController:[SocialViewController new] animated:NO];
             } completion:^(BOOL finished) {
             //
-                //[self presentViewController:[FRSocialHomeViewController new] animated:NO completion:nil];
-                [self.navigationController pushViewController:[FRSocialHomeViewController new] animated:NO];
+               
                 
             }];
             
-            [self.contentView removeFromSuperview];
+            //[self.contentView removeFromSuperview];
             
                     }
 
-    } else if (_isOuting == YES) {
-#warning 暂时more页面用的是scroll
-        NSLog(@"aaaa");
+    }
+    else if (_isOuting == YES) {
+
         if (scrollView.contentOffset.y < -120) {
             _isOuting = NO;
             [UIView animateWithDuration:0.4 animations:^{
                  
                 
             }];
-            weakSelf.contentView.frame = weakSelf.view.bounds;
+            self.contentView.frame = self.view.frame;
            // weakSelf.contentView.alpha = 1;
             
         }
