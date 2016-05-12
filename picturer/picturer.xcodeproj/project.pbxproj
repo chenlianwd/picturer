@@ -143,6 +143,18 @@
 		92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92724D881CE02FBD0058ADB0 /* FRAlbumHomeViewController.m */; };
 		92B2737A1CE1B54800D02D90 /* FRSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B273781CE1B54800D02D90 /* FRSearchViewController.m */; };
 		92B2737B1CE1B54800D02D90 /* FRSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B273791CE1B54800D02D90 /* FRSearchViewController.xib */; };
+		92FD7A661CE4322D001230FE /* FRTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A641CE4322D001230FE /* FRTagViewController.m */; };
+		92FD7A671CE4322D001230FE /* FRTagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FD7A651CE4322D001230FE /* FRTagViewController.xib */; };
+		92FD7A6C1CE450C2001230FE /* FRSortordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A6A1CE450C2001230FE /* FRSortordViewController.m */; };
+		92FD7A6D1CE450C2001230FE /* FRSortordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FD7A6B1CE450C2001230FE /* FRSortordViewController.xib */; };
+		92FD7A721CE46557001230FE /* FRPrivateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A701CE46557001230FE /* FRPrivateViewController.m */; };
+		92FD7A731CE46557001230FE /* FRPrivateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FD7A711CE46557001230FE /* FRPrivateViewController.xib */; };
+		92FD7A771CE466A2001230FE /* FRAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A761CE466A2001230FE /* FRAlbumModel.m */; };
+		92FD7A7A1CE466C8001230FE /* FRAlbumCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A791CE466C8001230FE /* FRAlbumCellModel.m */; };
+		92FD7A7D1CE467AD001230FE /* FRUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A7C1CE467AD001230FE /* FRUserInfo.m */; };
+		92FD7A811CE46F9E001230FE /* FRCommentPowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A801CE46F9E001230FE /* FRCommentPowerViewController.m */; };
+		92FD7A831CE47154001230FE /* FRCommentPowerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FD7A821CE47154001230FE /* FRCommentPowerController.xib */; };
+		92FD7A861CE47412001230FE /* FRImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD7A851CE47412001230FE /* FRImageModel.m */; };
 		BA2406481CE36EF000908822 /* FRMyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2406461CE36EF000908822 /* FRMyHomeViewController.m */; };
 		BA2406491CE36EF000908822 /* FRMyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2406471CE36EF000908822 /* FRMyHomeViewController.xib */; };
 /* End PBXBuildFile section */
@@ -330,6 +342,26 @@
 		92B273771CE1B54800D02D90 /* FRSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSearchViewController.h; sourceTree = "<group>"; };
 		92B273781CE1B54800D02D90 /* FRSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSearchViewController.m; sourceTree = "<group>"; };
 		92B273791CE1B54800D02D90 /* FRSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRSearchViewController.xib; sourceTree = "<group>"; };
+		92FD7A631CE4322D001230FE /* FRTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTagViewController.h; sourceTree = "<group>"; };
+		92FD7A641CE4322D001230FE /* FRTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRTagViewController.m; sourceTree = "<group>"; };
+		92FD7A651CE4322D001230FE /* FRTagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRTagViewController.xib; sourceTree = "<group>"; };
+		92FD7A691CE450C2001230FE /* FRSortordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSortordViewController.h; sourceTree = "<group>"; };
+		92FD7A6A1CE450C2001230FE /* FRSortordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSortordViewController.m; sourceTree = "<group>"; };
+		92FD7A6B1CE450C2001230FE /* FRSortordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRSortordViewController.xib; sourceTree = "<group>"; };
+		92FD7A6F1CE46557001230FE /* FRPrivateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPrivateViewController.h; sourceTree = "<group>"; };
+		92FD7A701CE46557001230FE /* FRPrivateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPrivateViewController.m; sourceTree = "<group>"; };
+		92FD7A711CE46557001230FE /* FRPrivateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRPrivateViewController.xib; sourceTree = "<group>"; };
+		92FD7A751CE466A2001230FE /* FRAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAlbumModel.h; sourceTree = "<group>"; };
+		92FD7A761CE466A2001230FE /* FRAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAlbumModel.m; sourceTree = "<group>"; };
+		92FD7A781CE466C8001230FE /* FRAlbumCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAlbumCellModel.h; sourceTree = "<group>"; };
+		92FD7A791CE466C8001230FE /* FRAlbumCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAlbumCellModel.m; sourceTree = "<group>"; };
+		92FD7A7B1CE467AD001230FE /* FRUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRUserInfo.h; sourceTree = "<group>"; };
+		92FD7A7C1CE467AD001230FE /* FRUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRUserInfo.m; sourceTree = "<group>"; };
+		92FD7A7F1CE46F9E001230FE /* FRCommentPowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCommentPowerViewController.h; sourceTree = "<group>"; };
+		92FD7A801CE46F9E001230FE /* FRCommentPowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCommentPowerViewController.m; sourceTree = "<group>"; };
+		92FD7A821CE47154001230FE /* FRCommentPowerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRCommentPowerController.xib; sourceTree = "<group>"; };
+		92FD7A841CE47412001230FE /* FRImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRImageModel.h; sourceTree = "<group>"; };
+		92FD7A851CE47412001230FE /* FRImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRImageModel.m; sourceTree = "<group>"; };
 		BA2406451CE36EF000908822 /* FRMyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMyHomeViewController.h; sourceTree = "<group>"; };
 		BA2406461CE36EF000908822 /* FRMyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMyHomeViewController.m; sourceTree = "<group>"; };
 		BA2406471CE36EF000908822 /* FRMyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRMyHomeViewController.xib; sourceTree = "<group>"; };
@@ -370,6 +402,10 @@
 		92074BBB1CE2DD2C0084D40D /* CreateAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				92FD7A7E1CE46F7F001230FE /* commentPower */,
+				92FD7A6E1CE4650E001230FE /* private */,
+				92FD7A681CE4507F001230FE /* sortord */,
+				92FD7A621CE43217001230FE /* tag */,
 				92074BBC1CE2DD520084D40D /* FRCreateAlbumViewController.h */,
 				92074BBD1CE2DD520084D40D /* FRCreateAlbumViewController.m */,
 				92074BBE1CE2DD520084D40D /* FRCreateAlbumViewController.xib */,
@@ -589,6 +625,7 @@
 		92724C681CE025490058ADB0 /* picturer */ = {
 			isa = PBXGroup;
 			children = (
+				92FD7A741CE4666A001230FE /* models */,
 				92074BC11CE30FC80084D40D /* third party */,
 				BA24063D1CE36DA700908822 /* social */,
 				921AD9051CE07BE90004F2C1 /* views */,
@@ -722,6 +759,61 @@
 				92B273791CE1B54800D02D90 /* FRSearchViewController.xib */,
 			);
 			path = search;
+			sourceTree = "<group>";
+		};
+		92FD7A621CE43217001230FE /* tag */ = {
+			isa = PBXGroup;
+			children = (
+				92FD7A631CE4322D001230FE /* FRTagViewController.h */,
+				92FD7A641CE4322D001230FE /* FRTagViewController.m */,
+				92FD7A651CE4322D001230FE /* FRTagViewController.xib */,
+			);
+			path = tag;
+			sourceTree = "<group>";
+		};
+		92FD7A681CE4507F001230FE /* sortord */ = {
+			isa = PBXGroup;
+			children = (
+				92FD7A691CE450C2001230FE /* FRSortordViewController.h */,
+				92FD7A6A1CE450C2001230FE /* FRSortordViewController.m */,
+				92FD7A6B1CE450C2001230FE /* FRSortordViewController.xib */,
+			);
+			path = sortord;
+			sourceTree = "<group>";
+		};
+		92FD7A6E1CE4650E001230FE /* private */ = {
+			isa = PBXGroup;
+			children = (
+				92FD7A6F1CE46557001230FE /* FRPrivateViewController.h */,
+				92FD7A701CE46557001230FE /* FRPrivateViewController.m */,
+				92FD7A711CE46557001230FE /* FRPrivateViewController.xib */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
+		92FD7A741CE4666A001230FE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				92FD7A751CE466A2001230FE /* FRAlbumModel.h */,
+				92FD7A761CE466A2001230FE /* FRAlbumModel.m */,
+				92FD7A781CE466C8001230FE /* FRAlbumCellModel.h */,
+				92FD7A791CE466C8001230FE /* FRAlbumCellModel.m */,
+				92FD7A7B1CE467AD001230FE /* FRUserInfo.h */,
+				92FD7A7C1CE467AD001230FE /* FRUserInfo.m */,
+				92FD7A841CE47412001230FE /* FRImageModel.h */,
+				92FD7A851CE47412001230FE /* FRImageModel.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		92FD7A7E1CE46F7F001230FE /* commentPower */ = {
+			isa = PBXGroup;
+			children = (
+				92FD7A7F1CE46F9E001230FE /* FRCommentPowerViewController.h */,
+				92FD7A801CE46F9E001230FE /* FRCommentPowerViewController.m */,
+				92FD7A821CE47154001230FE /* FRCommentPowerController.xib */,
+			);
+			path = commentPower;
 			sourceTree = "<group>";
 		};
 		BA24063D1CE36DA700908822 /* social */ = {
@@ -943,6 +1035,7 @@
 				92074BC01CE2DD520084D40D /* FRCreateAlbumViewController.xib in Resources */,
 				921AD8D21CE0425C0004F2C1 /* logo_triangle.png in Resources */,
 				921AD8ED1CE0425C0004F2C1 /* search.png in Resources */,
+				92FD7A671CE4322D001230FE /* FRTagViewController.xib in Resources */,
 				921AD8FD1CE0425C0004F2C1 /* user_5.jpg in Resources */,
 				921AD8DB1CE0425C0004F2C1 /* no_cover.png in Resources */,
 				921AD8DC1CE0425C0004F2C1 /* nonAvatar.png in Resources */,
@@ -951,6 +1044,7 @@
 				921AD8A61CE0425C0004F2C1 /* ad_1.jpg in Resources */,
 				921AD8C21CE0425C0004F2C1 /* icon_3.png in Resources */,
 				92B2737B1CE1B54800D02D90 /* FRSearchViewController.xib in Resources */,
+				92FD7A731CE46557001230FE /* FRPrivateViewController.xib in Resources */,
 				921AD8E71CE0425C0004F2C1 /* photo_icon.png in Resources */,
 				921AD8DE1CE0425C0004F2C1 /* pic_1.JPG in Resources */,
 				921AD8F61CE0425C0004F2C1 /* logo_white.png in Resources */,
@@ -973,6 +1067,7 @@
 				921AD8E31CE0425C0004F2C1 /* pic_6.JPG in Resources */,
 				921AD8D91CE0425C0004F2C1 /* moreCircle.png in Resources */,
 				921AD8CA1CE0425C0004F2C1 /* icon_unchoose.png in Resources */,
+				92FD7A831CE47154001230FE /* FRCommentPowerController.xib in Resources */,
 				921AD8B71CE0425C0004F2C1 /* changeToCollect_icon_yellow.png in Resources */,
 				921AD8F91CE0425C0004F2C1 /* user_11.jpg in Resources */,
 				921AD8E91CE0425C0004F2C1 /* pic_unSelected.png in Resources */,
@@ -982,6 +1077,7 @@
 				921AD8E41CE0425C0004F2C1 /* pic_7.JPG in Resources */,
 				921AD8B31CE0425C0004F2C1 /* camara.png in Resources */,
 				921AD8FA1CE0425C0004F2C1 /* user_2.jpg in Resources */,
+				92FD7A6D1CE450C2001230FE /* FRSortordViewController.xib in Resources */,
 				92074C171CE310580084D40D /* TZImagePickerController.bundle in Resources */,
 				921AD8BE1CE0425C0004F2C1 /* edit.png in Resources */,
 				921AD8E51CE0425C0004F2C1 /* pic_8.JPG in Resources */,
@@ -1027,6 +1123,7 @@
 				92B2737A1CE1B54800D02D90 /* FRSearchViewController.m in Sources */,
 				92074C211CE312690084D40D /* FRAddImgViewController.m in Sources */,
 				921AD9081CE07C490004F2C1 /* FRAlbumCell.m in Sources */,
+				92FD7A6C1CE450C2001230FE /* FRSortordViewController.m in Sources */,
 				92074C1B1CE310580084D40D /* TZPhotoPreviewController.m in Sources */,
 				92724D7F1CE02F320058ADB0 /* FRRegisterViewController.m in Sources */,
 				92724D841CE02F540058ADB0 /* FRFirstViewController.m in Sources */,
@@ -1034,18 +1131,25 @@
 				921AD9041CE0678E0004F2C1 /* UINavigationBar+Awesome.m in Sources */,
 				92074C1D1CE310580084D40D /* UIView+Layout.m in Sources */,
 				92074C1C1CE310580084D40D /* TZVideoPlayerController.m in Sources */,
+				92FD7A811CE46F9E001230FE /* FRCommentPowerViewController.m in Sources */,
 				92074BBF1CE2DD520084D40D /* FRCreateAlbumViewController.m in Sources */,
 				92074C161CE310580084D40D /* TZImageManager.m in Sources */,
 				92724D711CE02E4D0058ADB0 /* FRNavViewController.m in Sources */,
+				92FD7A661CE4322D001230FE /* FRTagViewController.m in Sources */,
 				92074C141CE310580084D40D /* TZAssetCell.m in Sources */,
 				925A60081CE17EE500F0FF57 /* FRPresentingView.m in Sources */,
 				92724D8A1CE02FBD0058ADB0 /* FRAlbumHomeViewController.m in Sources */,
 				BA2406481CE36EF000908822 /* FRMyHomeViewController.m in Sources */,
+				92FD7A861CE47412001230FE /* FRImageModel.m in Sources */,
 				92074C191CE310580084D40D /* TZPhotoPickerController.m in Sources */,
 				92724D7A1CE02F170058ADB0 /* FRLoginViewController.m in Sources */,
 				92074C151CE310580084D40D /* TZAssetModel.m in Sources */,
+				92FD7A771CE466A2001230FE /* FRAlbumModel.m in Sources */,
 				92074C181CE310580084D40D /* TZImagePickerController.m in Sources */,
 				92724C6B1CE025490058ADB0 /* main.m in Sources */,
+				92FD7A7D1CE467AD001230FE /* FRUserInfo.m in Sources */,
+				92FD7A7A1CE466C8001230FE /* FRAlbumCellModel.m in Sources */,
+				92FD7A721CE46557001230FE /* FRPrivateViewController.m in Sources */,
 				92074C2A1CE334900084D40D /* FRSocialHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

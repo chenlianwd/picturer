@@ -14,9 +14,8 @@
 @interface FRAlbumHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong) UITableView * albumTableView;
 @property (nonatomic, strong) FRPresentingView * PresentingView;
-
+@property (nonatomic ,strong)UIButton * bottomButton;
 @property (nonatomic, strong) UIView * contentView;
-@property (nonatomic, strong) UIScrollView * ScrollView;
 @property (nonatomic, assign) BOOL isOuting;
 @end
 
@@ -49,7 +48,6 @@
     [super viewDidLoad];
     self.albumTableView.delegate = self;
     self.albumTableView.dataSource = self;
-    self.ScrollView.delegate = self;
     _isOuting = NO;
     [self.albumTableView registerNib:[UINib nibWithNibName:@"FRAlbumCell" bundle:nil] forCellReuseIdentifier:@"AlbumCell"];
     [self createSubview];
@@ -78,9 +76,9 @@
 #pragma mark - setup UI
 -(void)createSubview
 {
-    _ScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
-    _ScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT *2);
+    
     _contentView = [[UIView alloc]initWithFrame:self.view.bounds];
+    _contentView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_contentView];
 
     
@@ -102,16 +100,16 @@
     self.PresentingView.backgroundColor = [UIColor whiteColor];
     [_contentView addSubview:self.PresentingView];
     
-    UIButton * bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - ADD_ALBUM_H - ADD_ALBUM_H, SCREEN_WIDTH, ADD_ALBUM_H);
-    bottomButton.backgroundColor = COLOR_YELLOW;
+    self.bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - ADD_ALBUM_H - ADD_ALBUM_H, SCREEN_WIDTH, ADD_ALBUM_H);
+    self.bottomButton.backgroundColor = COLOR_YELLOW;
     
     UIImageView * addImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"add01"]];
     addImageView.frame = CGRectMake(SCREEN_WIDTH / 2 - 20, 10, 40, 40);
     
-    [bottomButton addSubview:addImageView];
-    [bottomButton addTarget:self action:@selector(pullCreateAlbumTap:) forControlEvents:UIControlEventTouchUpInside];
-    [_contentView addSubview:bottomButton];
+    [self.bottomButton addSubview:addImageView];
+    [self.bottomButton addTarget:self action:@selector(pullCreateAlbumTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.bottomButton];
     
     
 }
@@ -255,25 +253,7 @@
     }];
     shareRowAction.backgroundColor = COLOR_YELLOW;
     //shareRowAction.backgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    /*
-     //    // 添加一个置顶按钮
-     
-     UITableViewRowAction *topRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"置顶" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-     
-     NSLog(@"点击了置顶");
-     // 1. 更新数据
-     
-     //[_allDataArray exchangeObjectAtIndex:indexPath.row withObjectAtIndex:0];
-     
-     // 2. 更新UI
-     
-     NSIndexPath *firstIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section];
-     [tableView moveRowAtIndexPath:indexPath toIndexPath:firstIndexPath];
-     
-     }];
-     
-     topRowAction.backgroundColor = [UIColor lightGrayColor];
-     */
+    
     // 添加一个编辑按钮
     UITableViewRowAction * editRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"编辑" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         //从左滑到右的动画
@@ -337,15 +317,14 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
    //NSLog(@"huahuahuahau");
-    //_contentView.frame = CGRectMake(0,- scrollView.contentOffset.y, SCREEN_WIDTH, SCREEN_HEIGHT);
+    _contentView.frame = CGRectMake(0,- scrollView.contentOffset.y, SCREEN_WIDTH, SCREEN_HEIGHT);
+
     
 }
 //结束滑动
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (scrollView == _ScrollView) {
-        NSLog(@"fafafafafafa");
-    }
+    
     __weak typeof(self)weakSelf = self;
     if (_isOuting == NO) {
         
@@ -356,19 +335,20 @@
     
                 //改contentView的frame
                 weakSelf.contentView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
+                weakSelf.bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
+
                 //weakSelf.contentView.alpha = 0;
                 
                
             } completion:^(BOOL finished) {
-            //这样写也能出来，但是那边怎么回来？
-                [self presentViewController:[FRSocialHomeViewController new] animated:NO completion:nil];
+            //
+                //[self presentViewController:[FRSocialHomeViewController new] animated:NO completion:nil];
+                [self.navigationController pushViewController:[FRSocialHomeViewController new] animated:NO];
                 
-               
             }];
             
             [self.contentView removeFromSuperview];
-            [self.view addSubview:_ScrollView];
-            _ScrollView.backgroundColor = [UIColor blueColor];
+            
                     }
 
     } else if (_isOuting == YES) {
@@ -377,9 +357,8 @@
         if (scrollView.contentOffset.y < -120) {
             _isOuting = NO;
             [UIView animateWithDuration:0.4 animations:^{
-                 //weakSelf.moreHomeView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
-                //weakSelf.moreHomeView.alpha = 0;
-                _ScrollView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, weakSelf.view.bounds.size.height);
+                 
+                
             }];
             weakSelf.contentView.frame = weakSelf.view.bounds;
            // weakSelf.contentView.alpha = 1;

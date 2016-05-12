@@ -8,7 +8,10 @@
 
 #import "FRSocialHomeViewController.h"
 #import "FRMyHomeViewController.h"
-@interface FRSocialHomeViewController ()
+@interface FRSocialHomeViewController ()<UICollectionViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 
 @end
 
@@ -16,13 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.collectionView.delegate = self;
+    //UIView * whiteBg = [UIView alloc]initWithFrame:<#(CGRect)#>
 }
 - (IBAction)myHomeHandler:(UIButton *)sender {
-    
-    [self.presentingViewController.navigationController pushViewController:[FRMyHomeViewController new] animated:YES];
-    NSLog(@"点击了");
+    //[self dismissViewControllerAnimated:NO completion:nil];
+    //NSLog(@"aaa");
+   
 }
+
 - (IBAction)friendBtnHandler:(UIButton *)sender {
 }
 - (IBAction)miaorenBtnHandler:(UIButton *)sender {
@@ -40,7 +45,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma  mark - UICollectionViewDelegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    self.collectionView.frame = CGRectMake(0,scrollView.contentOffset.y, SCREEN_WIDTH, SCREEN_HEIGHT);
+}
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    NSLog(@"aaa");
+    if (scrollView.contentOffset.y < -120) {
+        NSLog(@"ok");
+    }
+}
 /*
 #pragma mark - Navigation
 
