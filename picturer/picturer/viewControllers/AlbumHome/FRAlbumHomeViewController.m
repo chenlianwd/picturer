@@ -84,7 +84,7 @@
     self.navigationItem.title = @"picturer";
     //恢复frame
    self.bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - ADD_ALBUM_H - ADD_ALBUM_H, SCREEN_WIDTH, ADD_ALBUM_H);
-    NSLog(@"%g",self.view.frame.origin.y);
+    //NSLog(@"%g",self.view.frame.origin.y);
    
 }
 #pragma mark - setup UI

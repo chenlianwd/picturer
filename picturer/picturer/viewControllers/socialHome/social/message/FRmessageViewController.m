@@ -1,25 +1,30 @@
 //
-//  FRMyHomeViewController.m
+//  FRmessageViewController.m
 //  picturer
 //
-//  Created by 陈亮 on 16/5/11.
+//  Created by BaiLinfeng on 16/5/13.
 //  Copyright © 2016年 FR. All rights reserved.
 //
 
-#import "FRMyHomeViewController.h"
+#import "FRmessageViewController.h"
 
-@interface FRMyHomeViewController ()
+@interface FRmessageViewController ()
 
 @end
 
-@implementation FRMyHomeViewController
+@implementation FRmessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.navigationItem.title = @"消息";
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"清空" style:UIBarButtonItemStylePlain target:self action:@selector(allDelete:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
-
+-(void)allDelete:(UIBarButtonItem *)item
+{
+    NSLog(@"allDelete");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
