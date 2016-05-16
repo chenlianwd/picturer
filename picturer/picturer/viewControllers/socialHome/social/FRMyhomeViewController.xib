@@ -40,6 +40,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="editingHandler:" destination="-1" eventType="touchUpInside" id="kpO-NZ-u9r"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nys-zd-xQu">
                     <rect key="frame" x="286" y="50" width="69" height="34"/>

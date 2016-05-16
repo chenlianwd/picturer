@@ -6,6 +6,7 @@
 //  Copyright © 2016年 FR. All rights reserved.
 //
 
+//**这个不是设置页面，写错。是主页中的编辑个人首页页面*/
 #import "FRSettingViewController.h"
 #import "FRSettingInfoTableViewCell.h"
 @interface FRSettingViewController ()<UITableViewDelegate,UITableViewDataSource>

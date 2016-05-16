@@ -8,6 +8,7 @@
 
 #import "FRMyhomeViewController.h"
 #import "FRmessageViewController.h"
+#import "FRSettingViewController.h"
 @interface FRMyhomeViewController ()
 
 @end
@@ -19,12 +20,17 @@
     
     UIBarButtonItem * rightButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"messageBtnIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(messageBtnHandler:)];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
+    self.navigationItem.title = @"主页";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 }
 -(void)messageBtnHandler:(UIBarButtonItem *)_item
 {
     //NSLog(@"moremoremore");
     [self.navigationController pushViewController:[FRmessageViewController new] animated:YES];
     
+}
+- (IBAction)editingHandler:(UIButton *)sender {
+    [self.navigationController pushViewController:[FRSettingViewController new] animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

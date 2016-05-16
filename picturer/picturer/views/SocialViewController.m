@@ -16,6 +16,8 @@
 #import "FRMiaorenViewController.h"
 #import "FRSettingViewController.h"
 #import "FRAdressListViewController.h"
+#import "FRRealSettingViewController.h"
+
 
 typedef NS_ENUM(NSInteger,FRSocialIndex) {
     FRSocialIndexMyHome,
@@ -160,7 +162,9 @@ typedef NS_ENUM(NSInteger,FRSocialIndex) {
             [self.navigationController pushViewController:[FRAdressListViewController new] animated:YES];
             break;
         case FRSocialIndexSetting:
-            [self.navigationController pushViewController:[FRSettingViewController new] animated:YES];
+            //[self.navigationController pushViewController:[FRSettingViewController new] animated:YES];
+            [self.navigationController pushViewController:[FRRealSettingViewController new] animated:YES];
+            
             break;
         default:
             break;
