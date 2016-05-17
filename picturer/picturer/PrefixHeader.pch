@@ -9,6 +9,13 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+// 只要添加了这个宏，就不用带mas_前缀
+#define MAS_SHORTHAND
+// 只要添加了这个宏，equalTo就等价于mas_equalTo 
+#define MAS_SHORTHAND_GLOBALS 
+// 这个头文件一定要放在上面两个宏的后面
+#import <Masonry.h>
+
 //定义整个屏幕的宽高
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
