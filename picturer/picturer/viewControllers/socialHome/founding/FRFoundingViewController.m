@@ -24,15 +24,12 @@
 -(UITableView *)searchTagTableView
 {
     if (!_searchTagTableView) {
-        _searchTagTableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+        _searchTagTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     }
     return _searchTagTableView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-//    self.navigationItem.title = @"发现";
-//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     UIBarButtonItem * rightButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"messageBtnIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(messageBtnHandler:)];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
@@ -61,14 +58,16 @@
     self.searchTagTableView.delegate = self;
     self.searchTagTableView.dataSource = self;
     
+    arr =@[@[@"紫砂",@"跑步",@"香格里拉",@"今年流行款"],@[@"旅行",@"健身",@"艺术",@"摄影",@"电影",@"美食",@"成长",@"设计",@"时尚",@"魔兽",@"行为艺术",@"春天"]];
     
-    arr =@[ @[@"紫砂",@"跑步",@"香格里拉",@"今年流行款"],@"旅行",@"健身",@"艺术",@"摄影",@"电影",@"美食",@"成长",@"设计",@"时尚",@"魔兽",@"行为艺术",@"春天"];
-    
+    self.view.backgroundColor = [UIColor orangeColor];
 }
 #pragma mark - UITextFieldDelegate
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    NSLog(@"start editing");
+    //NSLog(@"start editing");
+    [self.view addSubview:self.searchTagTableView];
+
 }
 
 
@@ -84,7 +83,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 40;
+    return section == 0 ? 4 : 12;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -96,6 +95,14 @@
     cell.textLabel.text = arr[indexPath.section][indexPath.row];
     
     return cell;
+}
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return section == 0 ? @"最近搜索" : @"热门标签";
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 20.0;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
